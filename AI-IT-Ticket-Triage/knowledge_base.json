@@ -1,0 +1,84 @@
+{
+  "categories": [
+    {
+      "name": "Account/Password",
+      "common_symptoms": [
+        "can't log in",
+        "forgot password",
+        "account locked out",
+        "password expired"
+      ],
+      "first_steps": [
+        "Confirm the exact error message the user sees at login.",
+        "Check if the account is locked out (repeated bad password attempts).",
+        "Reset the password and force a change at next logon.",
+        "Unlock the account if locked."
+      ],
+      "is_password_reset_flow": true
+    },
+    {
+      "name": "Network/VPN",
+      "common_symptoms": [
+        "can't connect to VPN",
+        "no internet access",
+        "can't reach internal resources",
+        "slow connection"
+      ],
+      "first_steps": [
+        "Confirm whether the issue is on-site or remote (VPN-dependent).",
+        "Check if other users on the same network/VPN are affected (isolated vs. widespread).",
+        "Verify the user's VPN client is up to date and credentials haven't expired.",
+        "Check basic connectivity (ping gateway, DNS resolution) before escalating."
+      ],
+      "is_password_reset_flow": false
+    },
+    {
+      "name": "Hardware",
+      "common_symptoms": [
+        "computer won't turn on",
+        "screen is black",
+        "printer not working",
+        "device not recognized"
+      ],
+      "first_steps": [
+        "Confirm power source and cable connections.",
+        "Try a basic restart of the device.",
+        "Check Device Manager for driver errors if the device isn't recognized.",
+        "Determine if this is a single device or affects multiple users (points to a shared resource issue)."
+      ],
+      "is_password_reset_flow": false
+    },
+    {
+      "name": "Software/Access",
+      "common_symptoms": [
+        "can't open an application",
+        "missing permissions",
+        "software error message",
+        "needs access to a shared drive or folder"
+      ],
+      "first_steps": [
+        "Confirm the exact error message and when it started happening.",
+        "Check if the user has the correct group membership for the resource.",
+        "Try restarting the application before deeper troubleshooting.",
+        "Confirm whether this requires a manager/access approval before granting."
+      ],
+      "is_password_reset_flow": false
+    },
+    {
+      "name": "Email",
+      "common_symptoms": [
+        "not receiving email",
+        "can't send email",
+        "mailbox full",
+        "email client won't sync"
+      ],
+      "first_steps": [
+        "Confirm whether this is affecting all email or specific senders/recipients.",
+        "Check mailbox storage quota.",
+        "Verify the account isn't locked or password-expired (email failures are often a symptom of an account issue).",
+        "Check for outages on the mail server/service if this is affecting multiple users."
+      ],
+      "is_password_reset_flow": false
+    }
+  ]
+}
