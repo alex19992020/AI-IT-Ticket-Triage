@@ -95,5 +95,6 @@ Replace <username> with the actual account - this is NOT run automatically.
 
 *(Testing screenshots go here.)*
 Here is me creating my claude API below,
+
 <img width="1433" height="263" alt="image" src="https://github.com/user-attachments/assets/c0adb573-177f-4bb5-84fd-22f32f76b2fa" />
 
