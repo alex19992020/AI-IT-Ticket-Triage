@@ -115,6 +115,10 @@ I did run into a couple of errors involving response parsing with non text conte
 Ok, now I will run more tests to see how good my AI model categorizes tickets, I will run 3 tests, "python triage.py --ticket "user says they can't connect to the VPN from home"" "python triage.py --ticket "printer on the 3rd floor isn't printing"" "python triage.py --ticket "my computer is being weird"". Notice how my last test is vague, I want to see whether my AI model forces a category anyway or handles the ambiguity gracefully, since real tickets are often written just as vaguely. Results shown below.
 <img width="1364" height="790" alt="image" src="https://github.com/user-attachments/assets/d812f70e-21a2-4846-ab47-7165e9dbf96e" />
 
+These were very good results because VPN and printer tests: both categorized correctly, and the urgency reasoning is doing real analysis, not just keyword matching. As you can see, the printer ticket got Medium, not High, with the reasoning "affects multiple users but likely has workarounds like other printers nearby" — that's the model weighing impact against available alternatives, which is exactly the judgment call a real Tier 1 tech would make.
+
+The third test, that being my vague test, also gave a good result because instead of forcing that into one of your five categories just because it had to pick something, it correctly returned Uncategorized, set urgency to low with the reasoning that there's not enough information yet, and generated steps aimed at gathering more detail rather than pulling generic troubleshooting steps that wouldn't actually apply. That shows that my AI tool is correctly recognizing the limits of what it can determine from a bad ticket description, instead of confidently guessing wrong. I'll rather my AI tool admit it doesn't have enough information then admit fake confidence on unclear unput.
+
 
 
 
