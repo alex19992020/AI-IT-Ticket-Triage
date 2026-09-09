@@ -98,3 +98,16 @@ Here is me creating my claude API below,
 
 <img width="1433" height="263" alt="image" src="https://github.com/user-attachments/assets/c0adb573-177f-4bb5-84fd-22f32f76b2fa" />
 
+Ok, now I will go into my files using the powershell in order to follow the steps required to download everything from the readme. Shown below.
+<img width="1107" height="621" alt="image" src="https://github.com/user-attachments/assets/c354c1b9-84ea-49d5-9748-1d6412bae453" />
+
+Next I will install the dependency using the command "pip install -r requirements.txt", Shown below.
+<img width="1108" height="621" alt="image" src="https://github.com/user-attachments/assets/8e9a99d1-1e99-4bc1-b3bf-091356197cd4" />
+
+My next step was to set my API key that I created on anthropic using the command "$env:ANTHROPIC_API_KEY = "xxxxxxxxxxxxxxxxxxxxxx"".
+I then ran my first test to make sure it worked using the command, "python triage.py --ticket "user can't log into their email, password not working"". Shown below.
+<img width="1254" height="364" alt="image" src="https://github.com/user-attachments/assets/296c3b48-6969-407c-8e5e-bf8a49ba2c06" />
+
+
+
+
