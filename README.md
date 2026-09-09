@@ -57,7 +57,7 @@ python triage.py --ticket "user says they can't connect to the VPN from home"
   knowledge base rather than inventing new ones.
 - If the ticket looks like a password reset scenario, the tool prints the
   exact PowerShell command to run against my
-  [help desk automation toolkit](../PowerShell-IT-automation-toolkit) -
+  [help desk automation toolkit](https://github.com/alex19992020/PowerShell-IT-automation-toolkit) -
   again, only as a suggestion for a human to confirm and run.
 - Every classification is logged to `triage-log.jsonl` with a timestamp, so
   there's a record of what the tool suggested over time.
