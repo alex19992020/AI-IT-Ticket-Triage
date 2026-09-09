@@ -108,6 +108,10 @@ My next step was to set my API key that I created on anthropic using the command
 I then ran my first test to make sure it worked using the command, "python triage.py --ticket "user can't log into their email, password not working"". Shown below.
 <img width="1254" height="364" alt="image" src="https://github.com/user-attachments/assets/296c3b48-6969-407c-8e5e-bf8a49ba2c06" />
 
+I did run into a couple of errors involving response parsing with non text content blocks that I fixed. After I did a git pull then git push so that it would be updated on my github. Shown below.
+<img width="734" height="423" alt="image" src="https://github.com/user-attachments/assets/d35b4d92-bf97-4461-8451-31a5cb9adcd4" />
+
+
 
 
 
