@@ -99,6 +99,7 @@ Here is me creating my claude API below,
 <img width="1433" height="263" alt="image" src="https://github.com/user-attachments/assets/c0adb573-177f-4bb5-84fd-22f32f76b2fa" />
 
 
+
 Ok, now I will go into my files using the powershell in order to follow the steps required to download everything from the readme. Shown below.
 <img width="1107" height="621" alt="image" src="https://github.com/user-attachments/assets/c354c1b9-84ea-49d5-9748-1d6412bae453" />
 
