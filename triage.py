@@ -100,7 +100,17 @@ def classify_ticket(client: "anthropic.Anthropic", kb: dict, ticket_text: str) -
         messages=[{"role": "user", "content": f"Ticket: {ticket_text}"}],
     )
 
-    raw_text = response.content[0].text.strip()
+    # Some models can return additional content blocks (e.g. an internal
+    # reasoning/"thinking" block) before the actual text response, so don't
+    # assume the text is always at index 0 - find the first text block.
+    raw_text = None
+    for block in response.content:
+        if getattr(block, "type", None) == "text":
+            raw_text = block.text.strip()
+            break
+
+    if raw_text is None:
+        raise ValueError("No text content found in the model's response.")
 
     # Models occasionally wrap JSON in markdown fences despite instructions -
     # strip those defensively rather than letting the parse fail.
