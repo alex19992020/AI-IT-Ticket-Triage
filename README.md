@@ -112,6 +112,9 @@ This shows a clean, correct result end to end — right category, reasonable urg
 I did run into a couple of errors involving response parsing with non text content blocks that I fixed. After I did a git pull then git push so that it would be updated on my github. Shown below.
 <img width="734" height="423" alt="image" src="https://github.com/user-attachments/assets/d35b4d92-bf97-4461-8451-31a5cb9adcd4" />
 
+Ok, now I will run more tests to see how good my AI model categorizes tickets, I will run 3 tests, "python triage.py --ticket "user says they can't connect to the VPN from home"" "python triage.py --ticket "printer on the 3rd floor isn't printing"" "python triage.py --ticket "my computer is being weird"". Notice how my last test is vague, I want to see whether my AI model forces a category anyway or handles the ambiguity gracefully, since real tickets are often written just as vaguely. Results shown below.
+<img width="1364" height="790" alt="image" src="https://github.com/user-attachments/assets/d812f70e-21a2-4846-ab47-7165e9dbf96e" />
+
 
 
 
