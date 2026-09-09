@@ -100,17 +100,18 @@ Replace <username> with the actual account - this is NOT run automatically.
 My next step was to set my API key that I created on anthropic using the command "$env:ANTHROPIC_API_KEY = "xxxxxxxxxxxxxxxxxxxxxx"".
 I then ran my first test to make sure it worked using the command, "python triage.py --ticket "user can't log into their email, password not working"". Shown below.
 <img width="1254" height="364" alt="image" src="https://github.com/user-attachments/assets/296c3b48-6969-407c-8e5e-bf8a49ba2c06" />
-This shows a clean, correct result end to end — right category, reasonable urgency reasoning, steps pulled straight from the knowledge base, and the password-reset tie-in triggered exactly as designed. The whole pipeline being API key → script → knowledge base → structured output is proven to work correctly. I will run other tests to further test to see how it handles vague tickets.
+The result was a clean, correct classification end to end — the right category, sound urgency reasoning, first-response steps pulled directly from the knowledge base, and the password-reset flow correctly triggering the tie-in to the PowerShell toolkit.
 
-I did run into a couple of errors involving response parsing with non text content blocks that I fixed. After I did a git pull then git push so that it would be updated on my github. Shown below.
+During testing, an error surfaced where the model occasionally returned a non-text content block ahead of the text response, which crashed the response parsing. This was fixed and pushed as a follow-up commit. Shown below.
 <img width="734" height="423" alt="image" src="https://github.com/user-attachments/assets/d35b4d92-bf97-4461-8451-31a5cb9adcd4" />
 
 I will run 3 tests, "python triage.py --ticket "user says they can't connect to the VPN from home"" "python triage.py --ticket "printer on the 3rd floor isn't printing"" "python triage.py --ticket "my computer is being weird"". Notice how my last test is vague, I want to see whether my AI model forces a category anyway or handles the ambiguity gracefully, since real tickets are often written just as vaguely. Testing across ticket categories confirmed accurate classification. The VPN and printer tests both categorized correctly, with urgency reasoning based on actual impact rather than keyword matching Results shown below. 
 <img width="1364" height="790" alt="image" src="https://github.com/user-attachments/assets/d812f70e-21a2-4846-ab47-7165e9dbf96e" />
 
-These were very good results because VPN and printer tests: both categorized correctly, and the urgency reasoning is doing real analysis, not just keyword matching. As you can see, the printer ticket got Medium, not High, with the reasoning "affects multiple users but likely has workarounds like other printers nearby" — that's the model weighing impact against available alternatives, which is exactly the judgment call a real Tier 1 tech would make.
+The VPN and printer tickets were both categorized correctly, with urgency reasoning based on real impact analysis rather than keyword matching — the printer ticket was rated Medium rather than High, with the reasoning that other printers nearby likely provide a workaround. That's the kind of judgment call a real Tier 1 tech would make.
 
-The third test, that being my vague test, also gave a good result because instead of forcing that into one of your five categories just because it had to pick something, it correctly returned Uncategorized, set urgency to low with the reasoning that there's not enough information yet, and generated steps aimed at gathering more detail rather than pulling generic troubleshooting steps that wouldn't actually apply. That shows that my AI tool is correctly recognizing the limits of what it can determine from a bad ticket description, instead of confidently guessing wrong. I'd rather the tool admit it doesn't have enough information than project false confidence on unclear input.
+The vague ticket produced the most useful result. Rather than forcing it into one of the five categories, the tool returned Uncategorized, set urgency to Low, and generated steps aimed at gathering more information instead of applying troubleshooting steps that might not even apply. I'd rather the tool admit it doesn't have enough information than project false confidence on unclear input — this result is the clearest evidence of that design goal actually holding up in practice.
+
 
 
 
